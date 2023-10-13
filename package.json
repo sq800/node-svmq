@@ -1,6 +1,6 @@
 {
-  "name": "svmq",
-  "version": "1.0.7",
+  "name": "@ysq/svmq",
+  "version": "1.0.8",
   "description": "Native System V message queues in Node.js",
   "main": "index.js",
   "scripts": {

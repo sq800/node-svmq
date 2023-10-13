@@ -17,10 +17,10 @@ using Nan::Null;
 #endif
 
 #ifndef linux
-struct msgbuf {
-  long mtype;
-  char mtext[1];
-};
+// struct msgbuf {
+//   long mtype;
+//   char mtext[1];
+// };
 #endif
 
 const size_t bsize = sizeof(struct msgbuf);
@@ -51,7 +51,7 @@ class SendMessageWorker : public AsyncWorker {
       message->mtype = type;
       memcpy(message->mtext, data, dataLength);
 
-      ret = msgsnd(id, message, dataLength, flags);
+      ret = msgsnd(id, message->mtext, dataLength, flags);
       error = errno;
 
       free(message);
